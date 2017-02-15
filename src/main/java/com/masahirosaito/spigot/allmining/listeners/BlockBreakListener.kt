@@ -19,6 +19,7 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.ItemStack
 
 class BlockBreakListener(val plugin: AllMining) : Listener {
+    val configs = plugin.configs
 
     @EventHandler(priority = EventPriority.MONITOR)
     fun onOreBreak(event: BlockBreakEvent) {
@@ -49,12 +50,16 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
 
             oreBlock.breakAll(player, plugin)
             oreBlock.warpItems(player)
-            plugin.messenger.send(player, miningData.getData(oreBlock))
+
+            if (configs.onMiningData) {
+                plugin.messenger.send(player, miningData.getData(oreBlock))
+            }
         }
     }
 
     private fun Player.isInValid(): Boolean = when {
-        isCreativeMode() -> true
+        isCreativeMode() && !configs.onCreative -> true
+        !isSneaking && configs.onSneaking -> true
         else -> false
     }
 
