@@ -11,7 +11,10 @@ data class Configs(
         val onMiningData: Boolean = true,
 
         @SerializedName("スニーキング状態の時のみ採掘する")
-        val onSneaking: Boolean = false
+        val onSneaking: Boolean = false,
+
+        @SerializedName("クリエイティブモード状態のときも採掘する")
+        val onCreative: Boolean = false
 ) {
     companion object {
         fun load(file: File): Configs {
