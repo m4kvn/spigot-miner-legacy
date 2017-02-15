@@ -5,5 +5,3 @@ src/test/
 .idea/
 gradle.properties
 build/
-
-libs/spigot-1\.10\.2\.jar
