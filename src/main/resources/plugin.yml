@@ -1,0 +1,7 @@
+name: AllMining
+version: @version@
+main: com.masahirosaito.spigot.allmining.AllMining
+depend: [MSCore]
+authors: [MasahiroSaito]
+description: Spigot plugin to mine all the same ore at once
+website: https://github.com/MasahiroSaito/AllMining
