@@ -6,22 +6,24 @@ import com.masahirosaito.spigot.allmining.nms.NMS_V1_11_R1
 import com.masahirosaito.spigot.allmining.nms.NMS_v1_10_R1
 import com.masahirosaito.spigot.mscore.Messenger
 import com.masahirosaito.spigot.mscore.UpdateChecker
+import com.masahirosaito.spigot.mscore.utils.load
 import com.masahirosaito.spigot.mscore.utils.register
 import org.bukkit.plugin.java.JavaPlugin
+import java.io.File
 
 class AllMining : JavaPlugin() {
+    lateinit var configs: Configs
     lateinit var messenger: Messenger
     lateinit var nms: NMS
 
     override fun onEnable() {
-        messenger = Messenger(this, true)
+        configs = Configs.load(File(dataFolder, "configs.json").load())
+        messenger = Messenger(this, false)
         nms = getNMS()
 
         checkUpdate()
 
-        listOf(
-                BlockBreakListener(this)
-        ).forEach { it.register(this) }
+        BlockBreakListener(this).register(this)
     }
 
     override fun onDisable() {
