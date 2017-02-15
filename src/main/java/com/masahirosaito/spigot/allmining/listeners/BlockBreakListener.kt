@@ -1,6 +1,7 @@
 package com.masahirosaito.spigot.allmining.listeners
 
 import com.masahirosaito.spigot.allmining.AllMining
+import com.masahirosaito.spigot.allmining.MiningData
 import com.masahirosaito.spigot.allmining.OreBlock
 import com.masahirosaito.spigot.allmining.utils.cancel
 import com.masahirosaito.spigot.mscore.materials.DamagedMaterial
@@ -42,10 +43,13 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
             ore.brokenBlocks.add(event.block)
 
         } else {
-            OreBlock(blocks = event.block.getRelativeOres()).apply {
-                breakAll(event.player, plugin)
-                warpItems(event.player)
-            }
+            val player = event.player
+            val miningData = MiningData(player, event.block.type)
+            val oreBlock = OreBlock(blocks = event.block.getRelativeOres())
+
+            oreBlock.breakAll(player, plugin)
+            oreBlock.warpItems(player)
+            plugin.messenger.send(player, miningData.getData(oreBlock))
         }
     }
 
