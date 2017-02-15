@@ -63,28 +63,9 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
         else -> false
     }
 
-    private fun ItemStack.isInValid(): Boolean = when (type) {
-        Material.DIAMOND_PICKAXE,
-        Material.GOLD_PICKAXE,
-        Material.IRON_PICKAXE,
-        Material.STONE_PICKAXE,
-        Material.WOOD_PICKAXE -> false
-        else -> true
-    }
+    private fun ItemStack.isInValid(): Boolean = !configs.pickaxes.contains(type)
 
-    private fun Block.isInValid(): Boolean = when (type) {
-        Material.COAL_ORE,
-        Material.IRON_ORE,
-        Material.GOLD_ORE,
-        Material.REDSTONE_ORE,
-        Material.GLOWING_REDSTONE_ORE,
-        Material.LAPIS_ORE,
-        Material.EMERALD_ORE,
-        Material.DIAMOND_ORE,
-        Material.QUARTZ_ORE,
-        Material.GLOWSTONE -> false
-        else -> true
-    }
+    private fun Block.isInValid(): Boolean = !configs.ores.contains(DamagedMaterial.new(this))
 
     private fun Block.getRelativeOres(): MutableSet<Block> {
         val type = DamagedMaterial.new(this)
