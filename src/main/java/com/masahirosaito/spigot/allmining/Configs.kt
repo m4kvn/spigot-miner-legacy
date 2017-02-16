@@ -9,7 +9,7 @@ import java.io.File
 
 data class Configs(
 
-        @SerializedName("Display a mining data when mining ores")
+        @SerializedName("Display a mining data when mined ores")
         val onMiningData: Boolean = true,
 
         @SerializedName("Mine ore only during sneaking")
@@ -18,7 +18,7 @@ data class Configs(
         @SerializedName("Mine ore also in creative mode")
         val onCreative: Boolean = false,
 
-        @SerializedName("Number of ore blocks that can be mined at one time")
+        @SerializedName("Number of ores that can be mined at one time")
         val maxOres: Int = 64,
 
         @SerializedName("Types of tools for mining")
