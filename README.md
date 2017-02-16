@@ -1,6 +1,8 @@
 # AllMining
 
-Spigot plugin to mine all the same ore at once
+Spigot plugin to mine all the same ore at once.
+Since this plugin leaves the mining processing of each ore to the server side,
+processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
 ## Download
 
