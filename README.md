@@ -6,6 +6,17 @@ processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
 [![](http://img.youtube.com/vi/TZzIPO7CANE/0.jpg)](http://www.youtube.com/watch?v=TZzIPO7CANE)
 
+## 機能
+
+- 採掘した鉱石に隣接する同じ種類の鉱石を全て採掘する
+- 採掘時の経験値とアイテムは全てプレイヤーの足元にドロップする
+- 鉱石の採掘中に道具が壊れた場合は採掘をやめる
+- 全ての鉱石はそれぞれプレイヤーが採掘した判定になる
+- シルクタッチ、耐久、幸運などのエンチャントに対応する
+- 設定で適応する道具を追加できる
+- 設定で適応する鉱石を追加できる
+- 設定で一度に採掘する鉱石の数を制限できる
+
 ## Download
 
 In order to use this plugin, MSCore must also be installed.
