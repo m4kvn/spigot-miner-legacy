@@ -72,7 +72,7 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
         val unCheckedBlocks = mutableSetOf(this)
         val checkedBlocks = mutableSetOf<Block>()
 
-        while (unCheckedBlocks.isNotEmpty()) {
+        while (unCheckedBlocks.isNotEmpty() && (checkedBlocks.size < configs.maxOres)) {
             unCheckedBlocks.first().let { b ->
                 unCheckedBlocks.remove(b)
                 checkedBlocks.add(b)

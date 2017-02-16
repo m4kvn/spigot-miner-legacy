@@ -18,6 +18,9 @@ data class Configs(
         @SerializedName("クリエイティブモード状態のときも採掘する")
         val onCreative: Boolean = false,
 
+        @SerializedName("一度に採掘できる鉱石ブロックの数")
+        val maxOres: Int = 64,
+
         @SerializedName("採掘を行う道具の種類")
         val pickaxes: List<Material> = listOf(
                 Material.DIAMOND_PICKAXE,
