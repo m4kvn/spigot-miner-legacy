@@ -9,7 +9,6 @@ import com.masahirosaito.spigot.mscore.utils.getRelatives
 import com.masahirosaito.spigot.mscore.utils.isCreativeMode
 import com.masahirosaito.spigot.mscore.utils.itemInMainHand
 import com.masahirosaito.spigot.mscore.utils.spawnExp
-import org.bukkit.Material
 import org.bukkit.block.Block
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler

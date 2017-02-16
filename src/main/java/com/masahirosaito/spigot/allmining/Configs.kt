@@ -9,19 +9,19 @@ import java.io.File
 
 data class Configs(
 
-        @SerializedName("採掘時にデータを表示する")
+        @SerializedName("Display a mining data when mining ores")
         val onMiningData: Boolean = true,
 
-        @SerializedName("スニーキング状態の時のみ採掘する")
+        @SerializedName("Mine ore only during sneaking")
         val onSneaking: Boolean = false,
 
-        @SerializedName("クリエイティブモード状態のときも採掘する")
+        @SerializedName("Mine ore also in creative mode")
         val onCreative: Boolean = false,
 
-        @SerializedName("一度に採掘できる鉱石ブロックの数")
+        @SerializedName("Number of ore blocks that can be mined at one time")
         val maxOres: Int = 64,
 
-        @SerializedName("採掘を行う道具の種類")
+        @SerializedName("Types of tools for mining")
         val pickaxes: List<Material> = listOf(
                 Material.DIAMOND_PICKAXE,
                 Material.GOLD_PICKAXE,
@@ -30,7 +30,7 @@ data class Configs(
                 Material.WOOD_PICKAXE
         ),
 
-        @SerializedName("採掘できる鉱石の種類")
+        @SerializedName("Types of ores that can be mined")
         val ores: List<DamagedMaterial> = listOf(
                 DamagedMaterial(Material.COAL_ORE, 0),
                 DamagedMaterial(Material.IRON_ORE, 0),
