@@ -1,5 +1,5 @@
 name: AllMining
-version: @version@
+version: 1.0
 main: com.masahirosaito.spigot.allmining.AllMining
 depend: [MSCore]
 authors: [MasahiroSaito]
