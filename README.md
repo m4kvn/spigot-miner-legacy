@@ -4,6 +4,8 @@ Spigot plugin to mine all the same ore at once.
 Since this plugin leaves the mining processing of each ore to the server side,
 processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
+### YouTube
+
 [![](http://img.youtube.com/vi/TZzIPO7CANE/0.jpg)](http://www.youtube.com/watch?v=TZzIPO7CANE)
 
 ## 機能
