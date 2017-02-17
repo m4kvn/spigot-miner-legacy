@@ -1,4 +1,4 @@
-# AllMining
+# ![AllMining](./assets/AllMining.png)
 
 It is a Spigot Plugin which extracts all adjacent ore at once.
 Since this plugin leaves the mining processing of each ore to the server side,
@@ -25,8 +25,8 @@ In order to use this plugin, MSCore must also be installed.
 
 | Spigot | MSCore | AllMining |
 | :----: | :----: | :-------: |
-| 1.10.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.0) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FAllMining%2F1.0%2FAllMining-1.0.jar) |
-| 1.11.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.0) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FAllMining%2F1.0%2FAllMining-1.0.jar) |
+| 1.10.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.1) ](https://www.spigotmc.org/resources/allmining.36443/download?version=143087) |
+| 1.11.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.1) ](https://www.spigotmc.org/resources/allmining.36443/download?version=143087) |
 
 ## Configuration
 
