@@ -1,6 +1,5 @@
 package com.masahirosaito.spigot.allmining
 
-import com.masahirosaito.spigot.allmining.AllMining
 import org.bukkit.block.Block
 import org.bukkit.entity.Item
 import org.bukkit.entity.Player
