@@ -1,5 +1,6 @@
 package com.masahirosaito.spigot.allmining
 
+import com.masahirosaito.spigot.allmining.OreBlock
 import com.masahirosaito.spigot.mscore.utils.itemInMainHand
 import com.masahirosaito.spigot.mscore.utils.remainingDurability
 import org.bukkit.ChatColor

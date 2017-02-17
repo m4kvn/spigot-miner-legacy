@@ -9,6 +9,7 @@ import com.masahirosaito.spigot.mscore.utils.getRelatives
 import com.masahirosaito.spigot.mscore.utils.isCreativeMode
 import com.masahirosaito.spigot.mscore.utils.itemInMainHand
 import com.masahirosaito.spigot.mscore.utils.spawnExp
+import org.bukkit.Material
 import org.bukkit.block.Block
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -67,7 +68,7 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
     private fun Block.isInValid(): Boolean = !configs.ores.contains(DamagedMaterial.new(this))
 
     private fun Block.getRelativeOres(): MutableSet<Block> {
-        val type = DamagedMaterial.new(this)
+        val type = DamagedMaterial.get(this)
         val unCheckedBlocks = mutableSetOf(this)
         val checkedBlocks = mutableSetOf<Block>()
 
@@ -76,11 +77,17 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
                 unCheckedBlocks.remove(b)
                 checkedBlocks.add(b)
                 unCheckedBlocks.addAll(b.getRelatives(1)
-                        .filter { DamagedMaterial.new(it) == type }
+                        .filter { DamagedMaterial.get(it) == type }
                         .filterNot { checkedBlocks.contains(it) })
             }
         }
 
         return checkedBlocks
+    }
+
+    private fun DamagedMaterial.Companion.get(block: Block): DamagedMaterial = when (block.type) {
+        Material.GLOWING_REDSTONE_ORE -> DamagedMaterial(Material.REDSTONE_ORE,
+                block.state.data.toItemStack().durability)
+        else -> DamagedMaterial.new(block)
     }
 }
