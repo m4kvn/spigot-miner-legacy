@@ -1,4 +1,4 @@
-# AllMining
+# ![AllMining](./assets/AllMining.png)
 
 隣接する鉱石を一度に全て採掘する Spigot Plugin です。
 このプラグインは、それぞれの鉱石の採掘処理をサーバー側に任せているため、
@@ -21,12 +21,11 @@
 
 ## ダウンロード
 
-このプラグインを使うためには、[MSCore](https://github.com/MasahiroSaito/MSCore) を導入する必要があります。
+| Spigot | AllMining |
+| :----: | :-------: |
+| 1.10 ~ | [◉](https://www.spigotmc.org/resources/allmining.36443/download?version=143104) |
 
-| Spigot | MSCore | AllMining |
-| :----: | :----: | :-------: |
-| 1.10.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.0) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FAllMining%2F1.0%2FAllMining-1.0.jar) |
-| 1.11.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.0) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FAllMining%2F1.0%2FAllMining-1.0.jar) |
+> [SpigotMC](https://www.spigotmc.org/resources/allmining.36443/)
 
 ## 設定構成
 
