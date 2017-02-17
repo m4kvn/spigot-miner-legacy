@@ -21,12 +21,11 @@ processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
 ## Download
 
-In order to use this plugin, MSCore must also be installed.
+| Spigot | AllMining |
+| :----: | :-------: |
+| 1.10 ~ | [◉](https://www.spigotmc.org/resources/allmining.36443/download?version=143104) |
 
-| Spigot | MSCore | AllMining |
-| :----: | :----: | :-------: |
-| 1.10.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.1) ](https://www.spigotmc.org/resources/allmining.36443/download?version=143087) |
-| 1.11.2 | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/MSCore/images/download.svg) ](https://bintray.com/masahirosaito-repo/Spigot-Plugin/download_file?file_path=com%2FMasahiroSaito%2FSpigot%2FMSCore%2F0.5%2FMSCore-0.5.jar) | [ ![Download](https://api.bintray.com/packages/masahirosaito-repo/Spigot-Plugin/AllMining/images/download.svg?version=1.1) ](https://www.spigotmc.org/resources/allmining.36443/download?version=143087) |
+> [SpigotMC](https://www.spigotmc.org/resources/allmining.36443/)
 
 ## Configuration
 

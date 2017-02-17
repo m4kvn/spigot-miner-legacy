@@ -4,10 +4,7 @@ import com.masahirosaito.spigot.allmining.listeners.BlockBreakListener
 import com.masahirosaito.spigot.allmining.nms.NMS
 import com.masahirosaito.spigot.allmining.nms.NMS_V1_11_R1
 import com.masahirosaito.spigot.allmining.nms.NMS_v1_10_R1
-import com.masahirosaito.spigot.mscore.Messenger
-import com.masahirosaito.spigot.mscore.UpdateChecker
-import com.masahirosaito.spigot.mscore.utils.load
-import com.masahirosaito.spigot.mscore.utils.register
+import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
@@ -23,7 +20,7 @@ class AllMining : JavaPlugin() {
 
         checkUpdate()
 
-        BlockBreakListener(this).register(this)
+        BlockBreakListener(this).register()
     }
 
     override fun onDisable() {
@@ -31,12 +28,19 @@ class AllMining : JavaPlugin() {
     }
 
     private fun checkUpdate() {
-        UpdateChecker("masahirosaito-repo", "Spigot-Plugin", "AllMining").sendVersionMessage(this)
+        UpdateChecker().sendVersionMessage(this)
     }
 
     private fun getNMS(): NMS = when (server.bukkitVersion) {
         "1.10.2-R0.1-SNAPSHOT" -> NMS_v1_10_R1()
         "1.11.2-R0.1-SNAPSHOT" -> NMS_V1_11_R1()
         else -> throw Exception()
+    }
+
+    private fun <T : Listener> T.register() = apply { server.pluginManager.registerEvents(this, this@AllMining) }
+
+    private fun File.load(): File = this.apply {
+        if (!parentFile.exists()) parentFile.mkdirs()
+        if (!exists()) createNewFile()
     }
 }
