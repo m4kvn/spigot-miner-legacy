@@ -42,6 +42,7 @@ configurations {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    embed "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'org.spigotmc:spigot-api:1.10.2-R0.1-SNAPSHOT'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
