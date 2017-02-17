@@ -1,15 +1,13 @@
 package com.masahirosaito.spigot.allmining.listeners
 
 import com.masahirosaito.spigot.allmining.AllMining
+import com.masahirosaito.spigot.allmining.DamagedMaterial
 import com.masahirosaito.spigot.allmining.MiningData
 import com.masahirosaito.spigot.allmining.OreBlock
 import com.masahirosaito.spigot.allmining.utils.cancel
-import com.masahirosaito.spigot.mscore.materials.DamagedMaterial
-import com.masahirosaito.spigot.mscore.utils.getRelatives
-import com.masahirosaito.spigot.mscore.utils.isCreativeMode
-import com.masahirosaito.spigot.mscore.utils.itemInMainHand
-import com.masahirosaito.spigot.mscore.utils.spawnExp
-import org.bukkit.Material
+import com.masahirosaito.spigot.allmining.utils.isCreativeMode
+import com.masahirosaito.spigot.allmining.utils.itemInMainHand
+import com.masahirosaito.spigot.allmining.utils.spawnExp
 import org.bukkit.block.Block
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -85,9 +83,7 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
         return checkedBlocks
     }
 
-    private fun DamagedMaterial.Companion.get(block: Block): DamagedMaterial = when (block.type) {
-        Material.GLOWING_REDSTONE_ORE -> DamagedMaterial(Material.REDSTONE_ORE,
-                block.state.data.toItemStack().durability)
-        else -> DamagedMaterial.new(block)
+    fun Block.getRelatives(r: Int) = mutableListOf<Block>().apply {
+        for (x in -r..r) for (y in -r..r) for (z in -r..r) add(getRelative(x, y, z))
     }
 }
