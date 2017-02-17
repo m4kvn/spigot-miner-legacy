@@ -1,6 +1,6 @@
 # AllMining
 
-Spigot plugin to mine all the same ore at once.
+It is a Spigot Plugin which extracts all adjacent ore at once.
 Since this plugin leaves the mining processing of each ore to the server side,
 processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
@@ -8,16 +8,16 @@ processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
 [![](http://img.youtube.com/vi/TZzIPO7CANE/0.jpg)](http://www.youtube.com/watch?v=TZzIPO7CANE)
 
-## 機能
+## Features
 
-- 採掘した鉱石に隣接する同じ種類の鉱石を全て採掘する
-- 採掘時の経験値とアイテムは全てプレイヤーの足元にドロップする
-- 鉱石の採掘中に道具が壊れた場合は採掘をやめる
-- 全ての鉱石はそれぞれプレイヤーが採掘した判定になる
-- シルクタッチ、耐久、幸運などのエンチャントに対応する
-- 設定で適応する道具を追加できる
-- 設定で適応する鉱石を追加できる
-- 設定で一度に採掘する鉱石の数を制限できる
+- Mine all the same kind of ore adjacent to the mined ore
+- Drop experience values ​​and items at the time of mining at the feet of players
+- Stop mining if the tool breaks during ore mining
+- Every ore is a judgment that each player mined
+- It corresponds to enchantment such as silk touch, durability, Fortune
+- You can add tools to apply in settings
+- You can add ores to apply in setting
+- You can limit the number of ores mined at once by setting
 
 ## Download
 
