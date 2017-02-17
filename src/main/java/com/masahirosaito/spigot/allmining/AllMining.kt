@@ -28,7 +28,7 @@ class AllMining : JavaPlugin() {
     }
 
     private fun checkUpdate() {
-        UpdateChecker("masahirosaito-repo", "Spigot-Plugin", "AllMining").sendVersionMessage(this)
+        UpdateChecker().sendVersionMessage(this)
     }
 
     private fun getNMS(): NMS = when (server.bukkitVersion) {
