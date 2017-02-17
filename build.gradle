@@ -17,8 +17,8 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-group = pluginGroup
-version = pluginVersion
+group = "com.MasahiroSaito.Spigot"
+version = "1.0"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -57,14 +57,6 @@ dependencies {
 
 jar {
     from configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
-}
-
-import org.apache.tools.ant.filters.ReplaceTokens
-
-processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        filter ReplaceTokens, tokens: [version: version]
-    }
 }
 
 task sourceJar(type: Jar) {
