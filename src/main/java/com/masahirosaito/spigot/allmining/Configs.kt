@@ -3,7 +3,6 @@ package com.masahirosaito.spigot.allmining
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
-import com.masahirosaito.spigot.mscore.materials.DamagedMaterial
 import org.bukkit.Material
 import java.io.File
 
