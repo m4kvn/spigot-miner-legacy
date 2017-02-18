@@ -1,27 +1,27 @@
 package com.masahirosaito.spigot.allmining
 
+import com.google.gson.Gson
 import org.bukkit.plugin.java.JavaPlugin
 import java.net.URL
 
-class UpdateChecker {
+class UpdateChecker(val plugin: JavaPlugin) {
 
-    val url = URL("https://www.spigotmc.org/resources/allmining.36443/history")
+    data class Tag(val name: String)
 
-     fun getLatestVersion(): String {
-        return (url.openConnection().apply { setRequestProperty("User-Agent","Mozilla/5.0") }
-                .inputStream.bufferedReader()
-                .lines().filter { it.contains(Regex("<span class=\"muted\">")) }
-                .map { it.replace(Regex("<.+?>"), "").trim() }
-                .toArray().first() as String).replace(Regex("[^\\d.]"), "").trim()
-    }
+    val tags = getTags(URL("https://api.github.com/repos/MasahiroSaito/AllMining/tags"))
 
-    fun sendVersionMessage(plugin: JavaPlugin) {
+    fun getLatestVersion(): String = (tags.maxBy { it.name.toDouble() } ?: Tag(plugin.description.version)).name
+
+    fun sendVersionMessage() {
         Thread {
             val latestVersion = getLatestVersion()
             if (plugin.description.version < latestVersion) {
                 plugin.logger.info("New version $latestVersion available!")
-                plugin.logger.info("Download from => ${url.toString().replace("history", "")}")
+                plugin.logger.info("Download from => https://www.spigotmc.org/resources/allmining.36443/")
             }
         }.start()
     }
+
+    private fun getTags(url: URL): Array<Tag> =
+            Gson().fromJson(url.openConnection().inputStream.bufferedReader().readLine(), Array<Tag>::class.java)
 }
