@@ -1,7 +1,9 @@
 # ![AllMining](./assets/AllMining.png)
 
 隣接する鉱石を一度に全て採掘する Spigot Plugin です。
+
 このプラグインは、それぞれの鉱石の採掘処理をサーバー側に任せているため、
+
 他のプラグイン(Jobs、McMMOなど)の処理をそのまま保つことができます。
 
 ### YouTube
@@ -18,18 +20,25 @@
 - 設定で適用する道具を追加できる
 - 設定で適用する鉱石を追加できる
 - 設定で一度に採掘する鉱石の数を制限できる
+- コマンドでON/OFFの切り替えができる
 
 ## ダウンロード
 
 | Spigot | AllMining |
 | :----: | :-------: |
-| 1.10 ~ | [◉](https://www.spigotmc.org/resources/allmining.36443/download?version=143104) |
+| v 1.10 ~ | [v 1.3](https://github.com/MasahiroSaito/AllMining/releases/tag/1.3) |
 
-> [SpigotMC](https://www.spigotmc.org/resources/allmining.36443/)
+## コマンド
+
+| コマンド | 説明                          |
+| :------: | :---------------------------: |
+| /am on   | AllMining の機能を ON にする  |
+| /am off  | AllMining の機能を OFF にする |
 
 ## 設定構成
 
 設定ファイルが Json 形式で作成されます。
+
 テキストエディターなどで編集することで設定を変更できます。
 
 ```json
@@ -93,7 +102,3 @@
   ]
 }
 ```
-
-## リポジトリー
-
-<a href='https://bintray.com/masahirosaito-repo/Spigot-Plugin/AllMining?source=watch' alt='Get automatic notifications about new "AllMining" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
