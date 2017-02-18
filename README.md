@@ -1,7 +1,9 @@
 # ![AllMining](./assets/AllMining.png)
 
 It is a Spigot Plugin which extracts all adjacent ore at once.
+
 Since this plugin leaves the mining processing of each ore to the server side,
+
 processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 
 ### YouTube
@@ -18,18 +20,25 @@ processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 - You can add tools to apply in settings
 - You can add ores to apply in setting
 - You can limit the number of ores mined at once by setting
+- You can switch ON / OFF by command
 
 ## Download
 
 | Spigot | AllMining |
 | :----: | :-------: |
-| 1.10 ~ | [◉](https://www.spigotmc.org/resources/allmining.36443/download?version=143104) |
+| v 1.10 ~ | [v 1.3](https://github.com/MasahiroSaito/AllMining/releases/tag/1.3) |
 
-> [SpigotMC](https://www.spigotmc.org/resources/allmining.36443/)
+## Commands
+
+| Command | Description                   |
+| :------ | :---------------------------- |
+| /am on  | Turn on AllMining's function  |
+| /am off | Turn off AllMining's function |
 
 ## Configuration
 
 The configuration file is created in json format.
+
 You can change the setting by editing with a text editor or the like.
 
 ```json
@@ -93,7 +102,3 @@ You can change the setting by editing with a text editor or the like.
   ]
 }
 ```
-
-## Repository
-
-<a href='https://bintray.com/masahirosaito-repo/Spigot-Plugin/AllMining?source=watch' alt='Get automatic notifications about new "AllMining" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
