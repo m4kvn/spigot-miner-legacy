@@ -6,22 +6,21 @@ import java.net.URL
 
 class UpdateChecker(val plugin: JavaPlugin) {
 
-    data class Tag(val name: String)
+    data class Latest(val tag_name: String = "", val html_url: String = "")
 
-    val tags = getTags(URL("https://api.github.com/repos/MasahiroSaito/AllMining/tags"))
-
-    fun getLatestVersion(): String = (tags.maxBy { it.name.toDouble() } ?: Tag(plugin.description.version)).name
+    val url = URL("https://api.github.com/repos/MasahiroSaito/AllMining/releases/latest")
 
     fun sendVersionMessage() {
         Thread {
-            val latestVersion = getLatestVersion()
-            if (plugin.description.version < latestVersion) {
+            val latest = getLatest(url)
+            val latestVersion = latest.tag_name
+            if (plugin.description.version != latestVersion) {
                 plugin.logger.info("New version $latestVersion available!")
-                plugin.logger.info("Download from => https://www.spigotmc.org/resources/allmining.36443/")
+                plugin.logger.info("Download from => ${latest.html_url}")
             }
         }.start()
     }
 
-    private fun getTags(url: URL): Array<Tag> =
-            Gson().fromJson(url.openConnection().inputStream.bufferedReader().readLine(), Array<Tag>::class.java)
+    private fun getLatest(url: URL): Latest =
+            Gson().fromJson(url.openConnection().inputStream.bufferedReader().readLine(), Latest::class.java)
 }

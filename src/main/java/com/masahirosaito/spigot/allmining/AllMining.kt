@@ -28,7 +28,7 @@ class AllMining : JavaPlugin() {
     }
 
     private fun checkUpdate() {
-        UpdateChecker().sendVersionMessage(this)
+        UpdateChecker(this).sendVersionMessage()
     }
 
     private fun getNMS(): NMS = when (server.bukkitVersion) {
