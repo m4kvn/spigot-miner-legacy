@@ -28,6 +28,13 @@ processing of other plugins (Jobs, McMMO etc) can be maintained as it is.
 | :----: | :-------: |
 | v 1.10 ~ | [v 1.3](https://github.com/MasahiroSaito/AllMining/releases/tag/1.3) |
 
+## Commands
+
+| Command | Description                   |
+| :------ | :---------------------------- |
+| /am on  | Turn on AllMining's function  |
+| /am off | Turn off AllMining's function |
+
 ## Configuration
 
 The configuration file is created in json format.
