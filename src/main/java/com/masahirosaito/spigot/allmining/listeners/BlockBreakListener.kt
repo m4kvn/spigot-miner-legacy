@@ -56,6 +56,7 @@ class BlockBreakListener(val plugin: AllMining) : Listener {
     }
 
     private fun Player.isInValid(): Boolean = when {
+        !(plugin.playerdata.data[uniqueId] ?: true) -> true
         isCreativeMode() && !configs.onCreative -> true
         !isSneaking && configs.onSneaking -> true
         else -> false
