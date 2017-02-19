@@ -16,7 +16,7 @@ class UpdateChecker(val plugin: JavaPlugin) {
             val latestVersion = latest.tag_name
             if (plugin.description.version != latestVersion) {
                 plugin.logger.info("New version $latestVersion available!")
-                plugin.logger.info("Download from => https://dev.bukkit.org/projects/all-mining")
+                plugin.logger.info("Download from => https://dev.bukkit.org/projects/allmining")
             }
         }.start()
     }
