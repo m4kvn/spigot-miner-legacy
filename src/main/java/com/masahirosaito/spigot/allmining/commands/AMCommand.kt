@@ -15,12 +15,12 @@ class AMCommand(plugin: AllMining) : CommandExecutor {
 
         if (sender !is Player) return true
 
-        if (args == null || args.isEmpty()) return true
+        if (args == null || args.isEmpty()) return false
 
         return when (args[0]) {
             "on" -> on(sender)
             "off" -> off(sender)
-            else -> true
+            else -> false
         }
     }
 
