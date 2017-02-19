@@ -1,6 +1,7 @@
 package com.masahirosaito.spigot.allmining.commands
 
 import com.masahirosaito.spigot.allmining.AllMining
+import org.bukkit.ChatColor
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -26,13 +27,13 @@ class AMCommand(plugin: AllMining) : CommandExecutor {
 
     fun on(player: Player): Boolean {
         playerdata.data.put(player.uniqueId, true)
-        messenger.send(player, "AllMining ON")
+        messenger.send(player, "${ChatColor.RED}AllMining ON${ChatColor.RESET}")
         return true
     }
 
     fun off(player: Player): Boolean {
         playerdata.data.put(player.uniqueId, false)
-        messenger.send(player, "AllMining OFF")
+        messenger.send(player, "${ChatColor.BLUE}AllMining OFF${ChatColor.RESET}")
         return true
     }
 }
