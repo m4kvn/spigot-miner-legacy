@@ -13,9 +13,9 @@ permissions:
     description: Grant all permissions of AllMining.
     default: off
     children:
-      allmining.public: true
-  allmining.public:
-    description: Grant public permissions of AllMining.
+      allmining.general: true
+  allmining.general:
+    description: Grant general permissions of AllMining.
     default: off
     children:
       allmining.command: true
