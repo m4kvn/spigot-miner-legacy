@@ -1,5 +1,5 @@
 name: AllMining
-version: 1.3
+version: 1.4
 main: com.masahirosaito.spigot.allmining.AllMining
 authors: [MasahiroSaito]
 description: Spigot plugin to mine all the same ore at once
