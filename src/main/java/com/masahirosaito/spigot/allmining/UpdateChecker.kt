@@ -21,6 +21,11 @@ class UpdateChecker(val plugin: JavaPlugin) {
         }.start()
     }
 
-    private fun getLatest(url: URL): Latest =
+    private fun getLatest(url: URL): Latest {
+        return try {
             Gson().fromJson(url.openConnection().inputStream.bufferedReader().readLine(), Latest::class.java)
+        } catch(e: Exception) {
+            Latest(tag_name = plugin.description.version)
+        }
+    }
 }
