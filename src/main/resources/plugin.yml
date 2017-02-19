@@ -1,10 +1,24 @@
 name: AllMining
-version: 1.3
+version: 1.4
 main: com.masahirosaito.spigot.allmining.AllMining
 authors: [MasahiroSaito]
 description: Spigot plugin to mine all the same ore at once
-website: https://github.com/MasahiroSaito/AllMining
+website: https://dev.bukkit.org/projects/allmining
 commands:
   am:
     description: AllMining Command
-    usage: /am <on/off>
+    usage: /<command> (on/off)
+permissions:
+  allmining.*:
+    description: Grant all permissions of AllMining.
+    default: off
+    children:
+      allmining.general: true
+  allmining.general:
+    description: Grant general permissions of AllMining.
+    default: off
+    children:
+      allmining.command: true
+      allmining.command.on: true
+      allmining.command.off: true
+      allmining.execute: true
