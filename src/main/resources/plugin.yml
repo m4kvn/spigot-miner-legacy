@@ -8,3 +8,17 @@ commands:
   am:
     description: AllMining Command
     usage: /<command> (on/off)
+permissions:
+  allmining.*:
+    description: Grant all permissions of AllMining.
+    default: off
+    children:
+      allmining.public: true
+  allmining.public:
+    description: Grant public permissions of AllMining.
+    default: off
+    children:
+      allmining.command: true
+      allmining.command.on: true
+      allmining.command.off: true
+      allmining.execute: true
