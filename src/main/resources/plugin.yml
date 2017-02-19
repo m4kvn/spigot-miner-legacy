@@ -7,23 +7,4 @@ website: https://github.com/MasahiroSaito/AllMining
 commands:
   am:
     description: AllMining Command
-    permission: Allmining.command
-    permission-message: You do not have <permission>.
-    usage: |
-      /<command> (on/off)
-      Example: /<command> on - Turn on AllMining's function
-      Example: /<command> off - Turn off AllMining's function
-permissions:
-  AllMining.*:
-    description: Grant all permissions of AllMining.
-    default: op
-    children:
-      AllMining.public: true
-  AllMining.public:
-    description: Grant public permissions of AllMining.
-    default: true
-    children:
-      AllMining.command: true
-      AllMining.command.on: true
-      AllMining.command.off: true
-      AllMining.execute: true
+    usage: /<command> (on/off)
