@@ -16,11 +16,16 @@ class UpdateChecker(val plugin: JavaPlugin) {
             val latestVersion = latest.tag_name
             if (plugin.description.version != latestVersion) {
                 plugin.logger.info("New version $latestVersion available!")
-                plugin.logger.info("Download from => ${latest.html_url}")
+                plugin.logger.info("Download from => https://minecraft.curseforge.com/projects/allmining")
             }
         }.start()
     }
 
-    private fun getLatest(url: URL): Latest =
+    private fun getLatest(url: URL): Latest {
+        return try {
             Gson().fromJson(url.openConnection().inputStream.bufferedReader().readLine(), Latest::class.java)
+        } catch(e: Exception) {
+            Latest(tag_name = plugin.description.version)
+        }
+    }
 }
