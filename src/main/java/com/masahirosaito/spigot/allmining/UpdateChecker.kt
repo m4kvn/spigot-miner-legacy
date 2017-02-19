@@ -16,7 +16,7 @@ class UpdateChecker(val plugin: JavaPlugin) {
             val latestVersion = latest.tag_name
             if (plugin.description.version != latestVersion) {
                 plugin.logger.info("New version $latestVersion available!")
-                plugin.logger.info("Download from => ${latest.html_url}")
+                plugin.logger.info("Download from => https://minecraft.curseforge.com/projects/allmining")
             }
         }.start()
     }
