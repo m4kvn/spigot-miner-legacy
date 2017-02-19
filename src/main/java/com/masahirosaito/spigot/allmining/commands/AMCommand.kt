@@ -21,11 +21,8 @@ class AMCommand(val plugin: AllMining) : CommandExecutor {
         if (args == null || args.isEmpty()) return true
 
         subCommands.find { it.name == args[0] }?.let {
-            if (it.hasPermission(sender)) {
-                it.execute(sender, args.drop(1))
-            } else {
-                return sendPermissionMsg(sender, it.permission)
-            }
+            if (it.hasPermission(sender)) it.execute(sender, args.drop(1))
+            else return sendPermissionMsg(sender, it.permission)
         }
 
         return true
