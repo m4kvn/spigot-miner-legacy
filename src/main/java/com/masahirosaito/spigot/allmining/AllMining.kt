@@ -24,18 +24,12 @@ class AllMining : JavaPlugin() {
         nms = getNMS()
         playerdata = Playerdata.load(File(dataFolder, "playerdata.json").load())
 
-        checkUpdate()
-
         BlockBreakListener(this).register()
         getCommand("am").executor = AMCommand(this)
     }
 
     override fun onDisable() {
         playerdata.save(File(dataFolder, "playerdata.json"))
-    }
-
-    private fun checkUpdate() {
-        UpdateChecker(this).sendVersionMessage()
     }
 
     private fun getNMS(): NMS = when (server.bukkitVersion) {
