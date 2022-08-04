@@ -5,5 +5,4 @@ src/test/
 .idea/
 gradle.properties
 build/
-server-minecraft/
-server-minecraft/CraftBukkit/
+*.jar
