@@ -6,9 +6,9 @@ import org.bukkit.entity.Player
 import org.bukkit.metadata.FixedMetadataValue
 
 data class OreBlock(
-        val blocks: MutableSet<Block> = mutableSetOf(),
-        val brokenBlocks: MutableSet<Block> = mutableSetOf(),
-        var exp: Int = 0
+    val blocks: MutableSet<Block> = mutableSetOf(),
+    val brokenBlocks: MutableSet<Block> = mutableSetOf(),
+    var exp: Int = 0
 ) {
     fun breakAll(player: Player, plugin: AllMining) {
         blocks.forEach {
@@ -19,14 +19,16 @@ data class OreBlock(
     }
 
     fun warpItems(player: Player) {
-        mutableSetOf<Item>().apply {
-            brokenBlocks.forEach {
-                addAll(it.world.getNearbyEntities(it.location, 1.0, 1.0, 1.0)
-                        .filter { it is Item }
-                        .map { it as Item })
-            }
-        }.forEach {
-            it.apply { world.dropItem(player.location, it.itemStack) }.remove()
+        val items = mutableSetOf<Item>()
+        val brokenBlockItems = brokenBlocks.flatMap { block ->
+            block.world
+                .getNearbyEntities(block.location, 1.0, 1.0, 1.0)
+                .filterIsInstance<Item>()
+        }
+        items.addAll(brokenBlockItems)
+        items.forEach { item ->
+            item.world.dropItem(player.location, item.itemStack)
+            item.remove()
         }
     }
 }

@@ -5,8 +5,7 @@ import com.google.gson.GsonBuilder
 import com.masahirosaito.spigot.allmining.commands.AMCommand
 import com.masahirosaito.spigot.allmining.listeners.BlockBreakListener
 import com.masahirosaito.spigot.allmining.nms.NMS
-import com.masahirosaito.spigot.allmining.nms.NMS_V1_11_R1
-import com.masahirosaito.spigot.allmining.nms.NMS_v1_10_R1
+import com.masahirosaito.spigot.allmining.nms.NMS_V1_19
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
@@ -21,21 +20,15 @@ class AllMining : JavaPlugin() {
     override fun onEnable() {
         configs = Configs.load(File(dataFolder, "configs.json").load())
         messenger = Messenger(this, false)
-        nms = getNMS()
+        nms = NMS_V1_19()
         playerdata = Playerdata.load(File(dataFolder, "playerdata.json").load())
 
         BlockBreakListener(this).register()
-        getCommand("am").executor = AMCommand(this)
+        getCommand("am")?.setExecutor(AMCommand(this))
     }
 
     override fun onDisable() {
         playerdata.save(File(dataFolder, "playerdata.json"))
-    }
-
-    private fun getNMS(): NMS = when (server.bukkitVersion) {
-        "1.10.2-R0.1-SNAPSHOT" -> NMS_v1_10_R1()
-        "1.11.2-R0.1-SNAPSHOT" -> NMS_V1_11_R1()
-        else -> throw Exception()
     }
 
     private fun <T : Listener> T.register() = apply { server.pluginManager.registerEvents(this, this@AllMining) }
@@ -49,7 +42,7 @@ class AllMining : JavaPlugin() {
         companion object {
             fun load(file: File): Playerdata {
                 return Gson().fromJson(file.readText().let {
-                    if (it.isNullOrBlank()) Playerdata().toJson() else it
+                    it.ifBlank { Playerdata().toJson() }
                 }, Playerdata::class.java).save(file)
             }
         }

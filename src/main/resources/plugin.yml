@@ -1,7 +1,8 @@
 name: AllMining
-version: 1.6
+version: '${version}'
 main: com.masahirosaito.spigot.allmining.AllMining
-authors: [MasahiroSaito]
+api-version: 1.19
+authors: [m4kvn]
 description: Spigot plugin to mine all the same ore at once
 website: https://dev.bukkit.org/projects/allmining
 commands:

@@ -1,21 +1,24 @@
 package com.masahirosaito.spigot.allmining
 
-import com.masahirosaito.spigot.allmining.utils.itemInMainHand
-import com.masahirosaito.spigot.allmining.utils.remainingDurability
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.Statistic
 import org.bukkit.entity.Player
+import org.bukkit.inventory.ItemStack
+import org.bukkit.inventory.meta.Damageable
 
-class MiningData(val player: Player, val blockType: Material) {
-    val oldStatistic = player.getStatistic(Statistic.MINE_BLOCK, blockType)
-    val oldDurability = player.itemInMainHand.remainingDurability
+class MiningData(
+    private val player: Player,
+    private val blockType: Material,
+) {
+    private val oldStatistic = player.getStatistic(Statistic.MINE_BLOCK, blockType)
+    private val oldDurability = player.inventory.itemInMainHand.remainingDurability
 
     fun getData(oreBlock: OreBlock): String {
         val brokenBlockNum = oreBlock.brokenBlocks.size
         val droppedExperience = oreBlock.exp
         val newStatistic = player.getStatistic(Statistic.MINE_BLOCK, blockType)
-        val newDurability = player.itemInMainHand.remainingDurability
+        val newDurability = player.inventory.itemInMainHand.remainingDurability
 
         return buildString {
             append("[Blocks=${ChatColor.BLUE}$brokenBlockNum${ChatColor.RESET}] ")
@@ -24,4 +27,7 @@ class MiningData(val player: Player, val blockType: Material) {
             append("[Durability=${ChatColor.GOLD}$oldDurability→$newDurability${ChatColor.RESET}] ")
         }
     }
+
+    private val ItemStack.remainingDurability: Int
+        get() = type.maxDurability - ((itemMeta as? Damageable)?.damage ?: 0)
 }

@@ -11,6 +11,6 @@ interface SubCommand {
     fun execute(player: Player, args: List<String>)
 
     fun hasPermission(player: Player): Boolean {
-        return if (permission.isNullOrBlank()) true else player.hasPermission(permission)
+        return if (permission.isBlank()) true else player.hasPermission(permission)
     }
 }
