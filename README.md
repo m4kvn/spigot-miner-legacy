@@ -1,3 +1,7 @@
+# Please use this new plugin!
+- https://github.com/m4kvn/spigot-miner
+- https://www.spigotmc.org/resources/spigot-miner.104088/
+
 # ![AllMining](./assets/AllMining.png)
 
 It is a Spigot Plugin which extracts all adjacent ore at once.
